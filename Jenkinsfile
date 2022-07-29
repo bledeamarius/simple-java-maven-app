@@ -1,17 +1,5 @@
 
-def server = Artifactory.server 'artifactory-instance'
-rtUpload (
-    serverId: 'artifactory-instance',
-    spec: '''{
-          "files": [
-            {
-              "pattern": "**/*.jar",
-              "target": "maven-repo/"
-            }
-         ]
-    }''',
- 
-)
+
 pipeline {
     agent any
     tools { 
@@ -38,6 +26,19 @@ pipeline {
             steps {
 
                 script {
+                    def server = Artifactory.server 'artifactory-instance'
+                    rtUpload (
+                        serverId: 'artifactory-instance',
+                        spec: '''{
+                            "files": [
+                                {
+                                "pattern": "**/*.jar",
+                                "target": "maven-repo/"
+                                }
+                            ]
+                        }''',
+                    
+                    )
                     server.upload spec:rtUpload            
                 }
             }
