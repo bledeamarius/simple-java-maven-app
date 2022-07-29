@@ -37,7 +37,10 @@ pipeline {
         stage('Deploy') {
             steps {
 
-                server.upload spec:rtUpload            }
+                script {
+                    server.upload spec:rtUpload            
+                }
+            }
         }
 
     }
