@@ -1,5 +1,5 @@
 
-// def server = Artifactory.server 'artifactory-instance'
+def server = Artifactory.server 'artifactory-instance'
 rtUpload (
     serverId: 'artifactory-instance',
     spec: '''{
@@ -37,8 +37,7 @@ pipeline {
         stage('Deploy') {
             steps {
 
-                rtUpload()
-            }
+                server.upload spec:rtUpload            }
         }
 
     }
