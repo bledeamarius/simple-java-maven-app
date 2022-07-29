@@ -37,9 +37,7 @@ pipeline {
                                 }
                             ]
                         }''',
-                    
-                    )
-                    server.upload spec:rtUpload            
+                    )          
                 }
             }
         }
