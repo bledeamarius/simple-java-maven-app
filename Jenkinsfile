@@ -1,13 +1,13 @@
 
 
 pipeline {
-    agent any
+    
+    agent { dockerfile true }
+    
     tools { 
       maven 'MAVEN_INSTANCE' 
     }
-    environment {
-        env_variable = "Global value"
-    }
+
     stages {
         stage('Build') { 
             steps {
@@ -15,39 +15,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                echo "Running build #: ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            }
-        }
-
-        stage('Package') {
-            steps {
-                
-                sh "mvn package"
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-
-                script {
-                    def server = Artifactory.server 'artifactory-instance'
-                    rtUpload (
-                        serverId: 'artifactory-instance',
-                        spec: '''{
-                            "files": [
-                                {
-                                "pattern": "**/*.jar",
-                                "target": "maven-repo/"
-                                }
-                            ]
-                        }''',
-                    )          
-                }
-            }
-        }
 
     }
 }
