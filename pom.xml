@@ -12,7 +12,7 @@
     <repository>
       <uniqueVersion>false</uniqueVersion>
       <id>maven-repo</id>
-      <name>maven-repo/name>
+      <name>maven-repo</name>
       <url>http://localhost:8082/artifactory/maven-repo</url>
       <layout>default</layout>
     </repository>
