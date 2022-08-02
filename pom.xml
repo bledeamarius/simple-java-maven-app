@@ -11,12 +11,12 @@
     <repository>
         <id>central</id>
         <name>05812cffaff1-releases</name>
-        <url>http://localhost:8081/artifactory/maven-repo</url>
+        <url>http://localhost:8082/artifactory/maven-repo</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>05812cffaff1-snapshots</name>
-        <url>http://localhost:8081/artifactory/maven-repo</url>
+        <url>http://localhost:8082/artifactory/maven-repo</url>
     </snapshotRepository>
 </distributionManagement>
   <dependencies>
