@@ -8,16 +8,6 @@
   <name>my-app</name>
   <url>http://maven.apache.org</url>
 
-  <distributionManagement>
-    <repository>
-      <uniqueVersion>false</uniqueVersion>
-      <id>artifactory</id>
-      <name>maven-repo</name>
-      <url>http://localhost:8082/artifactory/maven-repo</url>
-      <layout>default</layout>
-    </repository>
-</distributionManagement>
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -32,6 +22,33 @@
   <build>
     <pluginManagement>
       <plugins>
+              <plugin>
+            <groupId>org.jfrog.buildinfo</groupId>
+            <artifactId>artifactory-maven-plugin</artifactId>
+            <version>3.2.3</version>
+            <inherited>false</inherited>
+            <executions>
+                <execution>
+                    <id>build-info</id>
+                    <goals>
+                        <goal>publish</goal>
+                    </goals>
+                    <configuration>
+                        <deployProperties>
+                            <gradle>awesome</gradle>
+                            <review.team>qa</review.team>
+                        </deployProperties>
+                        <publisher>
+                            <contextUrl>http://localhost:8082/artifactory</contextUrl>
+                            <username>{env.ARTIFACTORY_USERNAME}</username>
+                            <password>{env.ARTIFACTORY_PASSWORD}</password>
+                            <repoKey>maven-repo</repoKey>
+                            <snapshotRepoKey>maven-repo</snapshotRepoKey>
+                        </publisher>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
