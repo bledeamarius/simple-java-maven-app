@@ -7,7 +7,18 @@
   <version>1.${env.BUILD_NUMBER}-SNAPSHOT</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
-
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>05812cffaff1-releases</name>
+        <url>http://localhost:8081/artifactory/maven-repo</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>05812cffaff1-snapshots</name>
+        <url>http://localhost:8081/artifactory/maven-repo</url>
+    </snapshotRepository>
+</distributionManagement>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
