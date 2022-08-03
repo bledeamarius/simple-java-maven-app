@@ -7,7 +7,7 @@
   <version>1.${env.BUILD_NUMBER}-SNAPSHOT</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
-
+<!-- 
 <distributionManagement>
     <repository>
         <id>central</id>
@@ -15,11 +15,11 @@
         <url>http://localhost:8082/artifactory/maven-repo</url>
     </repository>
     <snapshotRepository>
-        <id>maven-repo-snapshots</id>
-        <name>05812cffaff1-snapshots</name>
+        <id>maven-repo</id>
+        <name>maven-repo</name>
         <url>http://localhost:8082/artifactory/maven-repo</url>
     </snapshotRepository>
-</distributionManagement>
+</distributionManagement> -->
 
   <dependencies>
     <dependency>
@@ -35,7 +35,7 @@
   <build>
     <pluginManagement>
       <plugins>
-              <!-- <plugin>
+              <plugin>
             <groupId>org.jfrog.buildinfo</groupId>
             <artifactId>artifactory-maven-plugin</artifactId>
             <version>3.2.3</version>
@@ -49,19 +49,19 @@
                     <configuration>
                         <deployProperties>
                             <gradle>awesome</gradle>
-                            <review.team>qa</review.team>
+                            <review.team>devops</review.team>
                         </deployProperties>
                         <publisher>
                             <contextUrl>http://localhost:8082/artifactory</contextUrl>
-                            <username>{env.ARTIFACTORY_USERNAME}</username>
-                            <password>{env.ARTIFACTORY_PASSWORD}</password>
+                            <username>admin</username>
+                            <password>password</password>
                             <repoKey>maven-repo</repoKey>
                             <snapshotRepoKey>maven-repo</snapshotRepoKey>
                         </publisher>
                     </configuration>
                 </execution>
             </executions>
-        </plugin> -->
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
