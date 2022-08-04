@@ -8,10 +8,12 @@
   <name>my-app</name>
   <url>http://maven.apache.org</url>
 
+
+
 <distributionManagement>
     <repository>
-        <id>maven-repo</id>
-        <name>maven-repo</name>
+        <id>maven-repo-local</id>
+        <name>maven-repo-local</name>
         <url>http://localhost:8082/artifactory/</url>
     </repository>
 
