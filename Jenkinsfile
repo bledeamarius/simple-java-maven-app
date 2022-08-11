@@ -3,7 +3,10 @@
 pipeline {
     agent any
     // agent { dockerfile true }
-    
+    environment {
+        DOCKER_REGISTRY = 'maryusmm'
+        IMAGE_NAME      = 'simple-java-maven-app'
+    }
     tools { 
       maven 'maven-instance' 
     }
