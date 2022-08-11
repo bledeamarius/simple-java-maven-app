@@ -4,7 +4,7 @@
   <groupId>com.accesa.app</groupId>
   <artifactId>marius-s-simple-app</artifactId>
   <packaging>war</packaging>
-  <version>1.test-${env.BUILD_NUMBER}</version>
+  <version>1-${env.BUILD_NUMBER}</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
 
@@ -14,7 +14,7 @@
     <repository>
         <id>maven-repo-local</id>
         <name>maven-repo-local</name>
-        <url>http://localhost:8082/artifactory/</url>
+        <url>http://localhost:8082/artifactory/maven-repo-local</url>
     </repository>
 
 </distributionManagement>
