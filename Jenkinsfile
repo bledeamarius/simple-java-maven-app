@@ -5,7 +5,7 @@ pipeline {
     agent { dockerfile true }
     
     tools { 
-      maven 'MAVEN_INSTANCE' 
+      maven 'maven-instance' 
     }
 
     stages {
