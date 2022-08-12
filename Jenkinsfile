@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Build docker image') { 
             steps {
-                sh "docker build --build-arg BUILD_NUMBER=${env.BUILD_NUMBER} -t $DOCKER_REGISTRY/$IMAGE_NAME:$BUILD_NUMBER ." 
+                sh "docker build --build-arg BUILD_NUMBER=${BUILD_NUMBER} -t $DOCKER_REGISTRY/$IMAGE_NAME:$BUILD_NUMBER ." 
             }
         }
 
