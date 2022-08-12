@@ -10,7 +10,7 @@ RUN mvn clean package
 # 2nd Stage
 FROM openjdk:11
 
-COPY --from=builder "target/marius-s-simple-app-1.${env.BUILD_NUMBER}-SNAPSHOT.jar" "marius-s-simple-app-1.${env.BUILD_NUMBER}-SNAPSHOT.jar"
+COPY --from=builder "target/marius-s-simple-app-1.${env.BUILD_NUMBER}.jar" "marius-s-simple-app-1.${env.BUILD_NUMBER}.jar"
 
 EXPOSE 8080
 
