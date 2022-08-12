@@ -16,6 +16,8 @@ ARG BUILD_NUMBER
 
 COPY --from=builder "target/marius-s-simple-app-1.${BUILD_NUMBER}.jar" "marius-s-simple-app-1.${BUILD_NUMBER}.jar"
 
-EXPOSE 8080
+ARG PORT_TO_EXPOSE=8080
+
+EXPOSE ${PORT_TO_EXPOSE}
 
 CMD ["java", "-jar","marius-s-simple-app-1.${BUILD_NUMBER}.jar"]
