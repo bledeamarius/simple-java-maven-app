@@ -1,5 +1,7 @@
 FROM maven:3.8.6-jdk-11 AS builder
 
+ARG BUILD_NUMBER
+
 # Add pom.xml and source code
 ADD ./pom.xml pom.xml
 ADD ./src src/
