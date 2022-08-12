@@ -24,7 +24,7 @@ pipeline {
             }
 
             steps{
-                sh "docker login -u=${DOCKERHUB_CREDENTIALS_USR} -p=${DOCKERHUB_CREDENTIALS_PWD}"
+                sh "docker login -u=${DOCKERHUB_CREDENTIALS_USR} -p=${DOCKERHUB_CREDENTIALS_PSW}"
             }
         }
         stage('Push to Docker Hub') {
