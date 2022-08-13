@@ -12,7 +12,7 @@ pipeline {
         stage('Deploy Container') {            
 
             steps{
-                sh "Docker image version $DOCKER_IMAGE_VERSION"
+                sh "echo "Docker image version $DOCKER_IMAGE_VERSION""
                 sh "docker run -d $DOCKER_REGISTRY/$IMAGE_NAME:${DOCKER_IMAGE_VERSION}"
             }
         }
